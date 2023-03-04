@@ -10,3 +10,6 @@ git clone https://github.com/phib0/Caesar-Cipher.git
 - Open ccipher.py
 
 > *Python version: Python 3 (**>=3.4**).*
+
+## Note
+> The programm is not yet working as intended
