@@ -23,6 +23,19 @@ def getMessage():
     message = input()
     return message
 
+def getKey():
+    go = False
+    while go != True:
+        print('Please enter a number from 1 to ' + str(max_len) + ':')
+        key = int(input())
+        if key < max_len and key > 1:
+            go = True
+        else:
+            continue
+    return key
+
 while usg == True:
     mode = getMode()
-     message = message.upper() #Remove, when now charsets are added
+    message = getMessage()
+    message = message.upper() #Remove, when now charsets are added
+    key = getKey()
