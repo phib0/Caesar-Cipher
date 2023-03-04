@@ -11,5 +11,7 @@ git clone https://github.com/phib0/Caesar-Cipher.git
 
 > *Python version: Python 3 (**>=3.4**).*
 
-## Note
-> The programm is not yet working as intended
+## Functionality
+
+The Programm can en- and decypher Messages using the Caesar Cyper.
+It uses only uppercase letters (input gets automatically capitalized), all other characters get ignored.
