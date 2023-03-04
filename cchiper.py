@@ -34,11 +34,40 @@ def getKey():
             continue
     return key
 
+def decrypt(inp, key):
+    outp = ''
+    key = key - 1
+
+    for x in inp:
+        current = CHARSET.find(x)
+        if current == -1:
+            outp += x
+        else:
+            current += key
+
+            if current >= len(CHARSET):
+                current -= len(CHARSET)
+            elif current < 0:
+                current += len(CHARSET)
+
+            outp += CHARSET[current]
+
+    return outp
+
 while usg == True:
     mode = getMode()
     message = getMessage()
     message = message.upper() #Remove, when now charsets are added
     key = getKey()
+
+    if mode == 'e':
+        print('Your encrypted message is:')
+        # Add message
+    elif mode == 'd':
+        print('Your decrypted message is:')
+        print(decrypt(message, key))
+    else:
+        print('Error: Wrong Mode: ' + mode)
 
     print('Do you want to ' + "\u0332".join("co") + 'ntinue or ' + "\u0332".join("ex") + 'it?')
     ce = []
