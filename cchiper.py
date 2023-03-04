@@ -39,3 +39,17 @@ while usg == True:
     message = getMessage()
     message = message.upper() #Remove, when now charsets are added
     key = getKey()
+
+    print('Do you want to ' + "\u0332".join("co") + 'ntinue or ' + "\u0332".join("ex") + 'it?')
+    ce = []
+    while ce not in ['c', 'e']:
+        ce = input().lower()[:1]
+        if ce in ['c', 'e']:
+            if ce == 'c':
+                usg = True
+            elif ce == 'e':
+                usg = False
+            else:
+                print('Error: Wrong input: ' + ce)
+        else:
+            print('Please enter either "continue", "c", "exit" or "e".')
