@@ -36,7 +36,7 @@ def getKey():
 
 def decrypt(inp, key):
     outp = ''
-    key = key - 1
+    key = key * -1
 
     for x in inp:
         current = CHARSET.find(x)
