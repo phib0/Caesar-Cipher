@@ -1,8 +1,6 @@
 CHARSETS = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz']
 DESCRIPTIONS = ['Only uppercase letters', 'Only upper and lowercase letters']
 
-#charset = CHARSETS[0] #Remove, when coosing charset is implemented
-
 usg = True
 
 def getMode():
@@ -43,7 +41,11 @@ def getMessage():
     else:
         print('Error: Wrong Mode: ' + mode)
     message = input()
-    return message
+
+    if charset == 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+        return message.upper()
+    else:
+        return message
 
 def getKey():
     go = False
@@ -99,7 +101,6 @@ while usg == True:
     mode = getMode()
     charset = chooseCharset()
     message = getMessage()
-    message = message.upper() #Remove, when now charsets are added
     max_len = len(charset)
     key = getKey()
 
