@@ -34,6 +34,25 @@ def getKey():
             continue
     return key
 
+def encrypt(inp, key):
+    outp = ''
+
+    for x in inp:
+        current = CHARSET.find(x)
+        if current == -1:
+            outp += x
+        else:
+            current += key
+
+            if current >= len(CHARSET):
+                current -= len(CHARSET)
+            elif current < 0:
+                current += len(CHARSET)
+
+            outp += CHARSET[current]
+
+    return outp
+
 def decrypt(inp, key):
     outp = ''
     key = key * -1
@@ -62,7 +81,7 @@ while usg == True:
 
     if mode == 'e':
         print('Your encrypted message is:')
-        # Add message
+        print(encrypt(message, key))
     elif mode == 'd':
         print('Your decrypted message is:')
         print(decrypt(message, key))
