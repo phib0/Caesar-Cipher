@@ -1,5 +1,7 @@
-CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-max_len = len(CHARSET)
+CHARSETS = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz']
+DESCRIPTIONS = ['Only uppercase letters', 'Only upper and lowercase letters']
+
+#charset = CHARSETS[0] #Remove, when coosing charset is implemented
 
 usg = True
 
@@ -12,6 +14,26 @@ def getMode():
             return mode
         else:
             print('Please enter either "encrypt", "e", "decrypt" or "d".')
+
+def chooseCharset():
+    print('Please choose from the following character sets:')
+    n = 0
+    for n in range(len(CHARSETS)):
+        v = n + 1
+        print(str(v) + '. ' + DESCRIPTIONS[n] + ' (' + CHARSETS[n] + ')')
+        n += 1
+
+    print('Please enter the number infront of the character set to use it.')
+    inp = int(input()) - 1
+
+    while inp not in range(len(CHARSETS)):
+        inp = int(input()) - 1
+        if int in range(len(CHARSETS)):
+            return CHARSETS[inp]
+        else:
+            print('Please enter a number from 1 to ' + len(CHARSETS) + '.')
+
+    return CHARSETS[inp]
 
 def getMessage():
     if mode == "e":
@@ -38,18 +60,18 @@ def encrypt(inp, key):
     outp = ''
 
     for x in inp:
-        current = CHARSET.find(x)
+        current = charset.find(x)
         if current == -1:
             outp += x
         else:
             current += key
 
-            if current >= len(CHARSET):
-                current -= len(CHARSET)
+            if current >= len(charset):
+                current -= len(charset)
             elif current < 0:
-                current += len(CHARSET)
+                current += len(charset)
 
-            outp += CHARSET[current]
+            outp += charset[current]
 
     return outp
 
@@ -58,25 +80,27 @@ def decrypt(inp, key):
     key = key * -1
 
     for x in inp:
-        current = CHARSET.find(x)
+        current = charset.find(x)
         if current == -1:
             outp += x
         else:
             current += key
 
-            if current >= len(CHARSET):
-                current -= len(CHARSET)
+            if current >= len(charset):
+                current -= len(charset)
             elif current < 0:
-                current += len(CHARSET)
+                current += len(charset)
 
-            outp += CHARSET[current]
+            outp += charset[current]
 
     return outp
 
 while usg == True:
     mode = getMode()
+    charset = chooseCharset()
     message = getMessage()
     message = message.upper() #Remove, when now charsets are added
+    max_len = len(charset)
     key = getKey()
 
     if mode == 'e':
