@@ -1,9 +1,9 @@
 # Caesar-Cipher
-This Repository contains my own approach to the "Caesar Cipher"
+This repository contains my own approach to the "Caesar cipher"
 
 ## Usage
 
-- Download this Repository
+- Download this repository
 ```
 git clone https://github.com/phib0/Caesar-Cipher.git
 ```
@@ -13,5 +13,5 @@ git clone https://github.com/phib0/Caesar-Cipher.git
 
 ## Functionality
 
-The Programm can en- and decypher Messages using the Caesar Cyper.
+The programm can en- and decypher messages using the Caesar cypher.
 It uses only uppercase letters (input gets automatically capitalized), all other characters get ignored.
