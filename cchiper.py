@@ -22,14 +22,21 @@ def chooseCharset():
         n += 1
 
     print('Please enter the number infront of the character set to use it.')
-    inp = int(input()) - 1
+    try:
+      inp = int(input()) - 1
+    except:
+      inp = -1
+      print('Please enter a number from 1 to ' + str(len(CHARSETS)) + '.')
 
     while inp not in range(len(CHARSETS)):
-        inp = int(input()) - 1
+        try:
+          inp = int(input()) - 1
+        except:
+          inp = -1
         if int in range(len(CHARSETS)):
             return CHARSETS[inp]
         else:
-            print('Please enter a number from 1 to ' + len(CHARSETS) + '.')
+            print('Please enter a number from 1 to ' + str(len(CHARSETS)) + '.')
 
     return CHARSETS[inp]
 
@@ -51,7 +58,10 @@ def getKey():
     go = False
     while go != True:
         print('Please enter a number from 1 to ' + str(max_len) + ':')
-        key = int(input())
+        try:
+          key = int(input())
+        except:
+            continue
         if key < max_len and key > 1:
             go = True
         else:
