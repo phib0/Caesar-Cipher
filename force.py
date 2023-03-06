@@ -43,7 +43,7 @@ while usg == True:
     german = loadGerman()
 
     for n in range(1, len(CHARSETS)):
-        charset = CHARSETS[n - 1] 
+        charset = CHARSETS[n - 1]
         max_len = len(charset)
         for o in range(1, max_len):
             temp = decrypt(message, o)
@@ -74,4 +74,4 @@ while usg == True:
             else:
                 print('Error: Wrong input: ' + ce)
         else:
-            print('Please enter either "continue", "c", "exit" or "e".')  
+            print('Please enter either "continue", "c", "exit" or "e".')
