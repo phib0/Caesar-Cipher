@@ -1,5 +1,5 @@
-CHARSETS = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz']
-DESCRIPTIONS = ['Only uppercase letters', 'Only upper and lowercase letters']
+CHARSETS = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890']
+DESCRIPTIONS = ['Only uppercase letters', 'Only upper and lowercase letters', 'Upper and lowercase letters and Numbers']
 
 usg = True
 
