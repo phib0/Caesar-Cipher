@@ -42,7 +42,7 @@ while usg == True:
     english = loadEnglish()
     german = loadGerman()
 
-    for n in range(1, len(CHARSETS)):
+    for n in range(0, len(CHARSETS)):
         charset = CHARSETS[n - 1]
         max_len = len(charset)
         for o in range(1, max_len):
@@ -59,7 +59,7 @@ while usg == True:
             elif search in german:
                 posible.append(current)
     print('Posible decrypted versions of the test are:')
-    for n in range(1, len(posible)):
+    for n in range(0, len(posible)):
         print(posible[n])
 
     print('Do you want to ' + "\u0332".join("co") + 'ntinue or ' + "\u0332".join("ex") + 'it?')
